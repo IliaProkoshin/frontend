@@ -20,8 +20,22 @@
                     placeholder="Введите текст для отправки на сервер"></textarea>
                 <button type="submit" id="send-button">Отправить</button>
             </form>
-
             <div id="status" class="status" role="status"></div>
+        </section>
+
+        <section class="block">
+            <h2>Просмотр сохраненных данных</h2>
+            <form id="read-form" novalidate>
+                <label for="query-input">Поисковый запрос:</label>
+                <input type="text" id="query-input" name="query"
+                    placeholder="Оставьте пустым, чтобы получить все содержимое файла">
+                <button type="submit" id="read-button">Показать данные</button>
+            </form>
+            <div id="read-status" class="status" role="status"></div>
+
+            <label for="result-output">Результат запроса:</label>
+            <textarea id="result-output" class="output" rows="8" readonly
+                placeholder="Здесь появится ответ бэкенда"></textarea>
         </section>
     </main>
 
