@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма отправки данных — версия {{ version }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <main class="container">
+        <p class="subtitle">Версия {{ version }}</p>
+
+        <section class="block">
+            <h2>Отправка данных</h2>
+            <form id="send-form" novalidate>
+                <label for="text-input">Введите текст:</label>
+                <textarea id="text-input" name="text" rows="4"
+                    placeholder="Введите текст для отправки на сервер"></textarea>
+                <button type="submit" id="send-button">Отправить</button>
+            </form>
+
+            <div id="status" class="status" role="status"></div>
+        </section>
+    </main>
+
+    <script>
+        window.BACKEND_URL = "{{ backend_url }}";
+        window.API_VERSION = "{{ version }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

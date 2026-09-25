@@ -1,0 +1,115 @@
+/* Форма отправки данных */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background: #f4f6f9;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 560px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(31, 41, 51, 0.1);
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.block {
+    padding-bottom: 24px;
+}
+
+.block h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #000000;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    border: 1px solid #cbd2d9;
+    border-radius: 8px;
+    resize: vertical;
+    background: #ffffff;
+    color: #000000;
+}
+
+textarea:focus {
+    outline: 2px solid #2f6fed;
+    outline-offset: 1px;
+    border-color: #2f6fed;
+}
+
+button {
+    margin-top: 16px;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #2f6fed;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button:hover {
+    background: #2559c4;
+}
+
+button:disabled {
+    background: #9db6ee;
+    cursor: not-allowed;
+}
+
+.status {
+    margin-top: 16px;
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    display: none;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.status--success {
+    display: block;
+    background: #e6f4ea;
+    border: 1px solid #9ad4ad;
+    color: #000000;
+}
+
+.status--error {
+    display: block;
+    background: #fdecec;
+    border: 1px solid #f0a5a5;
+    color: #000000;
+}
