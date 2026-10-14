@@ -57,4 +57,5 @@ if __name__ == "__main__":
     # чтобы страница была доступна с хост-машины.
     host = os.environ.get("HOST", "127.0.0.1")
     port = int(os.environ.get("PORT", "5000"))
-    app.run(host=host, port=port, debug=True)
+    debug = os.environ.get("DEBUG", "true").lower() in ("1", "true", "yes", "on")
+    app.run(host=host, port=port, debug=debug)
