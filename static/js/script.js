@@ -1,14 +1,3 @@
-/**
- * Форма отправки данных — версия 2.0.
- *
- * Блок 1 (из версии 1.0): кнопка «Отправить» отправляет текст из поля
- * на бэкенд POST-запросом на /api/data.
- *
- * Блок 2 (новая функциональность): кнопка «Показать данные» запрашивает
- * у бэкенда содержимое data.txt (GET /api/data) и выводит результат
- * в отдельное поле на странице.
- */
-
 (function () {
     "use strict";
 
@@ -36,12 +25,6 @@
             "error"
         );
     }
-
-    /**
-     * Проверить ответ бэкенда и выбросить понятную ошибку.
-     * 405 означает, что на сервере нет нужного метода: например,
-     * бэкенд версии 1.0 не умеет отдавать содержимое data.txt.
-     */
     function checkResponse(response) {
         if (response.ok) {
             return;
@@ -54,11 +37,6 @@
         }
         throw new Error("HTTP " + response.status);
     }
-
-    /**
-     * Разобрать ответ бэкенда. Flask отдает 405 и 404 в виде HTML,
-     * поэтому JSON читаем только при соответствующем Content-Type.
-     */
     async function readJson(response) {
         const contentType = response.headers.get("Content-Type") || "";
         if (!contentType.includes("application/json")) {
@@ -70,9 +48,6 @@
     function asNumber(value) {
         return typeof value === "number" ? value : 0;
     }
-
-    /* ---------- Блок 1: отправка данных ---------- */
-
     async function sendData() {
         const text = textInput.value.trim();
 
@@ -107,9 +82,6 @@
             sendButton.disabled = false;
         }
     }
-
-    /* ---------- Блок 2: чтение данных ---------- */
-
     async function readData() {
         const query = queryInput.value.trim();
         const url = window.BACKEND_URL + "/api/data" +
